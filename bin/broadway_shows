@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require_relative "../lib/broadway_shows"
+
+BroadwayShows::CLI.new.call
