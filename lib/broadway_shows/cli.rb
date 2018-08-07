@@ -23,6 +23,9 @@ class BroadwayShows::CLI
       input = gets.strip.downcase
       if input == "list"
         self.list_shows
+        puts "Enter the number corresponding to the show you would like more info on."
+        puts "Enter list if you would like to see the list of shows again."
+        puts "Enter exit if you would like to exit."
       elsif input == "1"
         puts "More info on The Lion King"
       elsif input == "2"
@@ -35,7 +38,7 @@ class BroadwayShows::CLI
         puts "Enter list if you would like to see the list of shows again."
         puts "Enter exit if you would like to exit."
       end
-    end 
+    end
   end
 
 end
