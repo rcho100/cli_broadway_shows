@@ -9,8 +9,7 @@ class BroadwayShows::CLI
   def list_shows
     puts "The following is a list of broadway shows that are currently popular."
 
-    puts "1. The Lion King"
-    puts "2. Chicago"
+    @all_shows = BroadwayShows::Show.all
   end
 
   def menu

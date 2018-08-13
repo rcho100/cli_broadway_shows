@@ -1,6 +1,11 @@
 class BroadwayShows::Show
   attr_accessor :name, :story, :theatre, :duration
 
+  def self.all
+    puts "1. The Lion King"
+    puts "2. Chicago"
+  end
+
   def self.scrape_shows
     show_1 = self.new
     show_1.name = "Hamilton"
