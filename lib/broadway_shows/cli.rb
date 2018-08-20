@@ -23,14 +23,19 @@ class BroadwayShows::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      if input == "list"
+      if input.to_i > 0
+        numbered_input = @all_shows[input.to_i - 1]
+        puts numbered_input.name
+        puts "Theatre: #{numbered_input.theatre}"
+        puts "Run-time: #{numbered_input.duration}"
+        puts "Description:"
+        puts numbered_input.story
+        
+
+      elsif input == "list"
         self.list_shows
         puts "Enter the number corresponding to the show you would like more info on."
         puts "Enter exit if you would like to exit."
-      elsif input == "1"
-        puts "More info on The Lion King"
-      elsif input == "2"
-        puts "More info on Chicago"
       elsif input == "exit"
         puts "Goodbye~!"
       else
