@@ -18,8 +18,8 @@ class BroadwayShows::Show
     show_1.duration = "2hrs, 55mins"
 
     show_2 = self.new
-    show_1.name = "The Lion King"
-    show_1.story = "A lively stage adaptation of the Academy Award-winning 1994 Disney film, The Lion King is the story
+    show_2.name = "The Lion King"
+    show_2.story = "A lively stage adaptation of the Academy Award-winning 1994 Disney film, The Lion King is the story
     of a young lion prince living in the flourishing African Pride Lands. Born into the royal family, precocious cub Simba spends
     his days exploring the sprawling savanna grasslands and idolizing his kingly father, Mufasa, while youthfully shirking the responsibility
     his position in life requires. When an unthinkable tragedy, orchestrated by Simba’s wicked uncle, Scar, takes his father’s life,
@@ -27,7 +27,9 @@ class BroadwayShows::Show
     Simba starts anew. But when weight of responsibility and a desperate plea from the now ravaged Pride Lands come to find the adult prince,
     Simba must take on a formidable enemy, and fulfill his destiny to be king. A vibrant and exciting tale from the great creatives at Disney,
     The Lion King is a story of love and redemption that nobody should miss."
-    show_1.theatre = "Minskoff Theatre"
-    show_1.duration = "2hrs, 30mins"
+    show_2.theatre = "Minskoff Theatre"
+    show_2.duration = "2hrs, 30mins"
+
+    [show_1, show_2]
   end
 end
