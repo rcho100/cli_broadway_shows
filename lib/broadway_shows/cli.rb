@@ -10,6 +10,9 @@ class BroadwayShows::CLI
     puts "The following is a list of broadway shows that are currently popular."
 
     @all_shows = BroadwayShows::Show.all
+    @all_shows.each.with_index(1) do |show, i|
+      puts "#{i}. #{show.name}"
+    end
   end
 
   def menu
