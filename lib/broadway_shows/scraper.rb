@@ -7,4 +7,8 @@ class BroadwayShows::Scraper
   def self.scrape_shows_index
     self.get_page.css(".shows-list-item-info")
   end
+
+  def create_shows
+
+  end
 end
