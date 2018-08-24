@@ -5,7 +5,9 @@ class BroadwayShows::Scraper
   end
 
   def self.scrape_shows_index
-    self.get_page.css(".shows-list-item-info")
+    shows = []
+    self.get_page.css("a.color-white.bold").text
+    shows
   end
 
   def create_shows
