@@ -2,6 +2,8 @@ class BroadwayShows::CLI
 
   def call
     puts "Welcome!"
+    #calling BroadwayShows::Scraper.create_shows just to test
+    BroadwayShows::Scraper.create_shows
     self.list_shows
     self.menu
   end
