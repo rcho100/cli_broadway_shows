@@ -1,8 +1,18 @@
 class BroadwayShows::Show
   attr_accessor :name, :story, :theatre, :duration
 
+  @@all = []
+
+  def initialize(name=nil, story=nil, theatre=nil, duration=nil)
+    @name = name
+    @story = story
+    @theatre = theatre
+    @duration = duration
+    @@all << self    
+  end
+
   def self.all
-    self.scrape_shows
+    @@all
   end
 
   # def self.scrape_shows
