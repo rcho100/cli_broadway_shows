@@ -8,11 +8,17 @@ class BroadwayShows::Show
     @story = story
     @theatre = theatre
     @duration = duration
-    @@all << self    
+    @@all << self
   end
 
   def self.all
     @@all
+  end
+
+  def self.create_shows
+    name_array = BroadwayShows::Scraper.scrape_shows_index.map{|show| show.text}
+    name_array.each{|show_name| self.new(show_name)}
+    self.all
   end
 
   # def self.scrape_shows
