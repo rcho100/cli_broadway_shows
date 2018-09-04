@@ -26,12 +26,12 @@ class BroadwayShows::CLI
     while input != "exit"
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= @all_shows.count
-        numbered_input = @all_shows[input.to_i - 1]
-        puts numbered_input.name
+        selected_restaurant = @all_shows[input.to_i - 1]
+        puts selected_restaurant.name
         puts "Theatre: #{numbered_input.theatre}"
         puts "Run-time: #{numbered_input.duration}"
         puts "Description:"
-        puts numbered_input.story
+        puts selected_restaurant.story
 
 
       elsif input == "list"
