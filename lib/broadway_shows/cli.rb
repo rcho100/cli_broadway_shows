@@ -28,8 +28,8 @@ class BroadwayShows::CLI
       if input.to_i > 0 && input.to_i <= @all_shows.count
         selected_restaurant = @all_shows[input.to_i - 1]
         puts selected_restaurant.name
-        puts "Theatre: #{numbered_input.theatre}"
-        puts "Run-time: #{numbered_input.duration}"
+        puts "Theatre: #{selected_restaurant.theatre}"
+        puts "Run-time: #{selected_restaurant.duration}"
         puts "Description:"
         puts selected_restaurant.story
 
