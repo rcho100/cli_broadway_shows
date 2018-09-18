@@ -3,12 +3,9 @@ class BroadwayShows::Show
 
   @@all = []
 
-  def initialize(name=nil, story=nil, theatre=nil, duration=nil, url=nil)
+  def initialize(name:, url:)
     @name = name
-    @story = story
-    @theatre = theatre
-    @duration = duration
-    @url = url
+    @url = "https://www.broadway.org" + url
     @@all << self
   end
 
@@ -17,8 +14,9 @@ class BroadwayShows::Show
   end
 
   def self.create_shows
-    name_array = BroadwayShows::Scraper.scrape_shows_index.map{|show| show.text}
-    name_array.each{|show_name| self.new(show_name)}
+    BroadwayShows::Scraper.scrape_shows_index.each do |show|
+      self.new(name: show.text, url: show.attributes["href"].value)
+    end
     self.all
   end
 
