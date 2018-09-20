@@ -20,5 +20,11 @@ class BroadwayShows::Show
     self.all
   end
 
+  def doc
+    Nokogiri::HTML(open(self.url))
+  end
 
+  def story
+   doc.css("div.col-lg-12.col-md-12.black-text").text.strip
+  end
 end
