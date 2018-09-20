@@ -27,4 +27,12 @@ class BroadwayShows::Show
   def story
    doc.css("div.col-lg-12.col-md-12.black-text").text.strip
   end
+
+  def theatre
+    doc.css("div.col-lg-6.col-md-9 p").text.split("\n")[0].strip
+  end
+
+  def duration
+    doc.css("div.col-lg-6.col-md-6").text.split.join(" ")
+  end
 end
