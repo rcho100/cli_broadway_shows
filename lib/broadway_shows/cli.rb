@@ -2,7 +2,6 @@ class BroadwayShows::CLI
 
   def call
     puts "Welcome!"
-    #calling BroadwayShows::Scraper.create_shows just to test
     BroadwayShows::Show.create_shows
     self.list_shows
     self.menu
@@ -19,8 +18,8 @@ class BroadwayShows::CLI
 
   def menu
     puts "Enter the number corresponding to the show you would like more info on."
-    puts "Enter list if you would like to see the list of shows again."
-    puts "Enter exit if you would like to exit."
+    puts "Enter 'list' if you would like to see the list of shows again."
+    puts "Enter 'exit' if you would like to exit."
 
     input = nil
     while input != "exit"
@@ -32,19 +31,23 @@ class BroadwayShows::CLI
         puts "Run-time: #{selected_restaurant.duration}"
         puts "Description:"
         puts selected_restaurant.story
+        puts ""
+        puts "Enter the number corresponding to the show you would like more info on."
+        puts "Enter 'list' if you would like to see the list of shows again."
+        puts "Enter 'exit' if you would like to exit."
 
 
       elsif input == "list"
         self.list_shows
         puts "Enter the number corresponding to the show you would like more info on."
-        puts "Enter exit if you would like to exit."
+        puts "Enter 'exit' if you would like to exit."
       elsif input == "exit"
         puts "Goodbye~!"
       else
         puts "Sorry, I don't understand..."
         puts "Enter the number corresponding to the show you would like more info on."
-        puts "Enter list if you would like to see the list of shows again."
-        puts "Enter exit if you would like to exit."
+        puts "Enter 'list' if you would like to see the list of shows again."
+        puts "Enter 'exit' if you would like to exit."
       end
     end
   end
