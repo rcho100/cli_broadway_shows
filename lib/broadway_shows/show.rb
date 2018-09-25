@@ -28,6 +28,6 @@ class BroadwayShows::Show
   def get_details
     self.story ||= doc.css("div.col-lg-12.col-md-12.black-text").text.strip
     self.theatre ||= doc.css("div.col-lg-6.col-md-9 p").text.split("\n")[0].strip
-    self.duration ||= doc.css("div.col-lg-6.col-md-6").text.split.join(" ")
+    self.duration ||= doc.css("div.col-lg-6.col-md-6").text.split[15..20].join(" ")
   end
 end

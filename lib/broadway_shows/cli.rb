@@ -26,10 +26,14 @@ class BroadwayShows::CLI
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= @all_shows.count
         selected_show = @all_shows[input.to_i - 1]
-        selected_show.get_details
         puts selected_show.name
+        selected_show.get_details
         puts "Theatre: #{selected_show.theatre}"
-        puts "Run-time: #{selected_show.duration}"
+        if selected_show.duration.split[5] == "with"
+          puts "Run-time: " + selected_show.duration + " 1 intermission"
+        else
+          puts "Run-time: #{selected_show.duration}"
+        end
         puts "Description:"
         puts selected_show.story
         puts ""
