@@ -31,8 +31,10 @@ class BroadwayShows::CLI
         puts "Theatre: #{selected_show.theatre}"
         if selected_show.duration.split[5] == "with"
           puts "Run-time: " + selected_show.duration + " 1 intermission"
-        else
+        elsif selected_show.duration.split[5] == "intermission"
           puts "Run-time: #{selected_show.duration}"
+        else
+          puts "Run-time: No run-time information available at this time"
         end
         puts "Description:"
         puts selected_show.story
