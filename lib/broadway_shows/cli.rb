@@ -8,7 +8,7 @@ class BroadwayShows::CLI
   end
 
   def list_shows
-    puts "The following is a list of broadway shows that are currently popular."
+    puts "The following is a list of broadway shows in NYC."
 
     @all_shows = BroadwayShows::Show.all
     @all_shows.each.with_index(1) do |show, i|
