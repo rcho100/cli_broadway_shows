@@ -18,16 +18,9 @@ class BroadwayShows::Show
     shows.each do |show|
       self.new(name: show.text, url: show.attributes["href"].value)
     end
-    self.all
-  end
-
-  def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
   end
 
   def get_details
-    self.story ||= doc.css("div.col-lg-12.col-md-12.black-text").text.strip
-    self.theatre ||= doc.css("div.col-lg-6.col-md-9 p").text.split("\n")[0].strip
-    self.duration ||= doc.css("div.col-lg-6.col-md-6 p").text.split[15..20].join(" ")
+    BroadwayShows::Scraper.scrape_details(self) if self.story == nil 
   end
 end

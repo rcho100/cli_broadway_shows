@@ -3,15 +3,14 @@ class BroadwayShows::CLI
   def call
     puts "Welcome!"
     BroadwayShows::Show.create_shows
-    self.list_shows
-    self.menu
+    list_shows
+    menu
   end
 
   def list_shows
     puts "The following is a list of broadway shows in NYC."
 
-    @all_shows = BroadwayShows::Show.all
-    @all_shows.each.with_index(1) do |show, i|
+    BroadwayShows::Show.all.each.with_index(1) do |show, i|
       puts "#{i}. #{show.name}"
     end
   end
@@ -24,8 +23,8 @@ class BroadwayShows::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      if input.to_i > 0 && input.to_i <= @all_shows.count
-        selected_show = @all_shows[input.to_i - 1]
+      if input.to_i > 0 && input.to_i <= BroadwayShows::Show.all.count
+        selected_show = BroadwayShows::Show.all[input.to_i - 1]
         puts selected_show.name
         selected_show.get_details
         puts "Theatre: #{selected_show.theatre}"
@@ -45,7 +44,7 @@ class BroadwayShows::CLI
 
 
       elsif input == "list"
-        self.list_shows
+        list_shows
         puts "Enter the number corresponding to the show you would like more info on."
         puts "Enter 'exit' if you would like to exit."
       elsif input == "exit"
@@ -58,5 +57,4 @@ class BroadwayShows::CLI
       end
     end
   end
-
 end
